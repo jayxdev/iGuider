@@ -1,7 +1,7 @@
 # :wave: Welcome to iGUIDER
 [![Python](https://img.shields.io/badge/Python-3.7.0-blue)]() 
-[![License](https://img.shields.io/github/license/SivinX11/iGUIDER)](https://github.com/SivinX11/iGUIDER/blob/master/LICENSE) 
-[![Issues](https://img.shields.io/github/issues/SivinX11/Neural_Style_Transfer)]()
+[![License](https://img.shields.io/github/license/jayxdev/iGUIDER)](https://github.com/jayxdev/iGUIDER/blob/master/LICENSE) 
+[![Issues](https://img.shields.io/github/issues/jayxdev/Neural_Style_Transfer)]()
 
 
 iGUIDER is a web-based application that helps students make effective decisions involving their careers. 
@@ -39,7 +39,7 @@ This is the open-source repository for the iGUIDER web-app.
 
 - Clone the repository: 
 
-        git clone https://github.com/SivinX11/iGUIDER.git
+        git clone https://github.com/jayxdev/iGUIDER.git
 - Enter The directory: 
 
         cd iGUIDER
