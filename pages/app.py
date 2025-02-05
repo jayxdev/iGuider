@@ -15,7 +15,7 @@ import math
 from bokeh.palettes import Greens
 from bokeh.transform import cumsum
 from bokeh.models import LabelSet, ColumnDataSource
-from chat import get_response
+# from chat import get_response
 #ap = Path.joinpath(Path.cwd(), 'models')
 #dsp = Path.joinpath(Path.cwd(), 'dataset')
 
