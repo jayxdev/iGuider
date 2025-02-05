@@ -8,3 +8,4 @@ pathlib
 nltk
 keras-preprocessing
 imagify
+google-generativeai

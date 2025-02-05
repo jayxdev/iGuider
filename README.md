@@ -8,7 +8,7 @@ iGUIDER is a web-based application that helps students make effective decisions 
 It is an intuitive yet powerful tool built on a user-friendly platform to make the overall student experience smoother. 
 
 
-![](img/21.png)
+![](res/img/21.png)
 ## :mortar_board: Use iGUIDER to:
 - Get answers to questions related to choice of streams and colleges.
 - Take an in-depth quiz to find out more about yourself and your prospective career paths.
@@ -19,7 +19,7 @@ This is the open-source repository for the iGUIDER web-app.
 
 
 <p align="center">
-<img width="500" height="260" src="gif_bot.gif">
+<img width="500" height="260" src="res/gif_bot.gif">
 </p>
 
 ## :star2: Features
@@ -32,7 +32,7 @@ This is the open-source repository for the iGUIDER web-app.
 
 
 <p align="center">
-<img width="500" height="260" src="gif_results.gif">
+<img width="500" height="260" src="res/gif_results.gif">
 </p>
 
 # :green_book: Steps for usage

@@ -1,7 +1,8 @@
 import numpy as np
 import pandas as pd
 #import preprocessor as p
-# import counselor
+from chat import get_response
+
 import tensorflow as tf
 from tensorflow import keras
 from keras.models import load_model
@@ -24,10 +25,10 @@ from bokeh.models import LabelSet, ColumnDataSource
 #words = joblib.load(Path.joinpath(artifacts_path, 'words.pkl'))
 #df2 = pd.read_csv(Path.joinpath(datasets_path, 'bot.csv'))
 
-model = load_model('botmodel.h5')
-tok = joblib.load('tokenizer_t.pkl')
-words = joblib.load('words.pkl')
-df2 = pd.read_csv('bot.csv')  #bot
+# model = load_model('botmodel.h5')
+# tok = joblib.load('tokenizer_t.pkl')
+# words = joblib.load('words.pkl')
+# df2 = pd.read_csv('bot.csv')  #bot
 flag=1
 
 import string
@@ -45,6 +46,58 @@ def main():
     n=1
     if "shared" not in st.session_state:
       st.session_state["shared"] = True
+
+    # lem = WordNetLemmatizer()
+    # n=1
+    # def tokenizer(x):
+    #     tokens = x.split()
+    #     rep = re.compile('[%s]' % re.escape(string.punctuation))
+    #     tokens = [rep.sub('', i) for i in tokens]
+    #     tokens = [i for i in tokens if i.isalpha()]
+    #     tokens = [lem.lemmatize(i.lower()) for i in tokens]
+    #     tokens = [i.lower() for i in tokens if len(i) > 1]
+    #     return tokens
+
+    # def no_stop_inp(tokenizer,df,c):
+    #     no_stop = []
+    #     x = df[c][0]
+    #     tokens = tokenizer(x)
+    #     no_stop.append(' '.join(tokens))
+    #     df[c] = no_stop
+    #     return df
+
+    # def inpenc(tok,df,c):
+    #     t = tok
+    #     x = x = [df[c][0]]
+    #     enc = t.texts_to_sequences(x)
+    #     padded = pad_sequences(enc, maxlen=16, padding='post')
+    #     return padded
+
+    # def predinp(model,x):
+    #     pred = np.argmax(model.predict(x))
+    #     return pred
+
+    # def botp(df3,pred):
+    #     l = df3.user[0].split()
+    #     if len([i for i in l if i in words])==0 :
+    #         pred = 1
+    #     return pred
+
+    # def botop(df2,pred):
+    #     x2 = df2.groupby('labels').get_group(pred).shape[0]
+    #     idx1 = np.random.randint(0,x2)
+    #     op = list(df2.groupby('labels').get_group(pred).bot)
+    #     return op[idx1]
+
+    # def botans(df3):
+    #     tok = joblib.load('tokenizer_t.pkl')
+    #     word = joblib.load('words.pkl')
+    #     df3 = no_stop_inp(tokenizer, df3, 'user')
+    #     inp = inpenc(tok, df3, 'user')
+    #     pred = predinp(model, inp)
+    #     pred = botp(df3, pred)
+    #     ans = botop(df2, pred)
+    #     return ans
     
     def get_text(ai=False):
         x = st.text_input("You : ")
@@ -63,8 +116,8 @@ def main():
     qvals = {"Select an Option": 0, "Strongly Agree": 5, "Agree": 4, "Neutral": 3, "Disagree": 2,
              "Strongly Disagree": 1}
     st.title("iGUIDER")
-    banner=Image.open("img/21.png")
-    st.image(banner, use_column_width=True)
+    banner=Image.open("res/img/21.png")
+    st.image(banner, use_container_width=True)
     st.write("Hi! I'm iGUIDER, your personal career counseling bot. Ask your queries in the text box below and hit enter. If and when you are ready to take our personality test, type \"start my test\" and you're good to go!")
     x=get_text(True)
     #df3 = get_text()
@@ -77,9 +130,12 @@ def main():
         flag=0
         ans = "Sure, good luck!"
     else:
-        ans = get_response(x) #botans(df3)
+        ans = get_response(x) ############################ gemini integration
+    text_area_height = max(100, len(ans.split('\n')) * 30)
+    st.text_area("iGUIDER:", value=ans, height=text_area_height, max_chars=None)
+    st.sc
 
-    st.text_area("iGUIDER:", value=ans, height=100, max_chars=None)
+
    ################################### test ##########################################################
     if(flag==0):
         #x=start_test()
@@ -663,8 +719,8 @@ def main():
                                                                             st.bokeh_chart(graph2,
                                                                                            use_container_width=True)
 
-                                                                            banner1 = Image.open("img/coun.png")
-                                                                            st.image(banner1, use_column_width=True)
+                                                                            banner1 = Image.open("res/img/coun.png")
+                                                                            st.image(banner1, use_container_width=True)
                                                                             st.header(
                                                                                 "Contacts of experts from various fields")
 
@@ -924,8 +980,8 @@ def main():
 
                                                             graph2.add_layout(graph2.legend[0], 'right')
                                                             st.bokeh_chart(graph2, use_container_width=True)
-                                                            banner1 = Image.open("img/coun.png")
-                                                            st.image(banner1, use_column_width=True)
+                                                            banner1 = Image.open("res/img/coun.png")
+                                                            st.image(banner1, use_container_width=True)
                                                             st.header("Contacts of experts from various fields")
                                                             for i in range(0, 5):
                                                                 st.subheader(professions[int(l[i])])
