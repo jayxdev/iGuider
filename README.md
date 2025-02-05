@@ -18,10 +18,6 @@ iGUIDER is a multi-platform web application that runs on Windows, Linux, Mac and
 This is the open-source repository for the iGUIDER web-app.
 
 
-<p align="center">
-<img width="500" height="260" src="res/gif_bot.gif">
-</p>
-
 ## :star2: Features
 - A chatbot at the outset, running on a simple yet robust Tensorflow model, that:
   - Attends to questions regarding choice of careers, streams, subjects, and colleges.
