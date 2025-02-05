@@ -133,7 +133,6 @@ def main():
         ans = get_response(x) ############################ gemini integration
     text_area_height = max(100, len(ans.split('\n')) * 30)
     st.text_area("iGUIDER:", value=ans, height=text_area_height, max_chars=None)
-    st.sc
 
 
    ################################### test ##########################################################
