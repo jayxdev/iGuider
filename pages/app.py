@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 #import preprocessor as p
-import counselor
+# import counselor
 import tensorflow as tf
 from tensorflow import keras
 from keras.models import load_model
