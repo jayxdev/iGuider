@@ -51,7 +51,7 @@ This is the open-source repository for the iGUIDER web-app.
         python setup.py
 - Run the app:
 
-        streamlit run app.py
+        streamlit run Home.py
 - Terminate the program from the terminal:
 
         Ctrl+C
